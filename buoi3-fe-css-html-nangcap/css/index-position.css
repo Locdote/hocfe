@@ -1,0 +1,33 @@
+.div1 {
+    width: 1000px;
+    height: 500px;
+    background-color: gray;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+.div1-con1 {
+    /* static: gia tri hien thi mac dinh, fixed: luon luon o mot vi tri tren man hinh ke ca khi di chuyen scrollbar, relative + absolute + fixed: kich hoat 4 thuoc tinh top, left, right, bottom
+        
+        ** Nếu thẻ con có position: absolute mà thẻ cha có position: relative thì các giá trị top, left, right, bottom của thẻ con sẽ được căn theo vị trí thẻ cha. **
+        ** Nếu thẻ cha không có position: relative thì các thẻ position: absolute bên trong top, left, right, bottom sẽ được căn theo thẻ body **
+    */
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    z-index: 2;
+}
+
+.div1-con2 {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    top: 30px;
+    left: 30px;
+    position: absolute;
+    z-index: 1;
+}
+

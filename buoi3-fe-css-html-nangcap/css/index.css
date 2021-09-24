@@ -1,0 +1,27 @@
+body {
+    min-height: 2000px;
+}
+
+div {
+    width: 100%;
+    height: 200px;
+    background-color: blue;
+    min-width: 1000px;
+    max-width: 1500px;
+}
+
+.div1 {
+    background-color: bisque;
+    margin: 20px 0 0 0;
+}
+
+.div1 i {
+    /* block: 1 dong moi, inline: cung 1 dong, none: an di, table: 1 dong moi */
+    display: block;
+    background-color: cadetblue;
+}
+
+.div2 {
+    /* static: gia tri hien thi mac dinh, fixed: luon luon o mot vi tri tren man hinh ke ca khi di chuyen scrollbar*/
+    position: fixed;
+}
