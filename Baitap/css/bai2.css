@@ -1,0 +1,92 @@
+.nen{
+    width: 706px;
+    height: 2000px;
+    background-color: pink;
+    left: 10%;
+    position: relative;
+    
+}
+.thanhmenu{
+    height: 140px;
+    width: 700px;
+    position: fixed;             
+    border: 3px solid blue;
+    background-color: cadetblue;
+    z-index: 3;                          
+}
+
+
+.asd1 {
+    width: 100px;
+    height: 80px;
+    background-color: chartreuse;
+    top: 30px;
+    left: 30px;
+    position: absolute;            
+}
+.asd2{
+    width: 100px;
+    height: 80px;
+    background-color: chartreuse;
+    top: 30px;
+    left: 170px;
+    position: absolute;
+}
+.asd3{
+    width: 100px;
+    height: 80px;
+    background-color: chartreuse;
+    top: 30px;
+    left: 310px;
+    position: absolute;
+}
+.asd4{
+    width: 100px;
+    height: 80px;
+    background-color: chartreuse;
+    top: 30px;
+    right: 150px;
+    position: absolute;
+}
+.asd5{
+    width: 100px;
+    height: 80px;
+    background-color: chartreuse;
+    top: 30px;
+    right: 30px;
+    position: absolute;
+    
+    
+}
+.anh1{
+    width: 200px;
+    height: 200px;
+    background-image: url("https://anhdepblog.com/wp-content/uploads/2020/09/anh-dep-lam-hinh-nen-2.jpg");
+    top: 180px;
+    left: 30px;
+    position: absolute;
+    z-index: 1;
+          
+}
+.chu1{
+   
+    top: 180px;
+    left: 20px;
+    right: 20px;
+    position: absolute;
+    z-index: 2;
+}
+.anh2{
+    width: 300px;
+    height: 200px;
+    background-image: url("https://1.bp.blogspot.com/-DiMavU_LdNg/Xzi0tnTuspI/AAAAAAAABqc/efWNE7efBLQRXtetwxOxyUzsr-2foeS7wCPcBGAsYHg/s0/image.png");
+    top: 500px;
+    right: 30px;
+    position: absolute;
+    z-index: 1;
+    
+}
+
+
+
+
