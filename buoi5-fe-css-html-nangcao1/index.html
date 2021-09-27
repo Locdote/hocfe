@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <style>
+            p {
+                display: inline;
+                text-decoration: underline;
+                color: blue;
+            }
+
+            p:hover {
+                cursor: pointer;
+            }
+
+            input:focus {
+                border: 5px green solid;
+            }
+
+            button:active {
+                background-color: hotpink;
+            }
+
+            button:hover {
+                background-color: greenyellow;
+            }
+
+            a:visited {
+                color: red;
+            }
+
+            div::before {
+                content: "Day la phia truoc --";
+                color: indigo;
+            }
+
+            div::after {
+                content: "-- Day la phia sau";
+                color: lawngreen;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p>Click vao day</p>
+        <input type="text"/>
+        <button>Click vao day</button>
+        <a href="#">Di chuot qua day</a>
+
+        <div>Day la the</div>
+    </body>
+</html>
