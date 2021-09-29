@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+    </head>
+
+    <body>
+        <h1>Javascript in body</h1>
+        <p id="demo"></p>
+    </body>
+
+    <script>
+        var text = "Nguyen Van A";
+        text = "Nguyen Van C";
+        let text1 = "Nguyen Van B";
+
+        document.getElementById("demo").innerHTML = text1;
+
+        document.write(text);
+        console.log(text);
+        //alert(text1);
+
+        const ten = "Nguyen Van Loc";
+
+
+        // Kieu du lieu string
+        var name = "Nguyen Van A";
+        var name1 = 'Nguyen Van B';
+        // Kieu du lieu so
+        var age = 18;
+        // Kieu dung/sai (boolean)
+        var isMale = true;
+        var isFemale = false;
+        // Kieu doi tuong (object)
+        var student = {
+            "ten": "Nguyen Van A",
+            "tuoi": 20,
+            "lop": 11,
+            "depTrai": true,
+            "capSach": {
+                "mauSac": "maudo"
+            }
+        }
+
+        // Kieu mang (array)
+        var nameArray = ["Nguyen Van A", "Nguyen Van B", "Nguyen Van C"];
+
+        // Kieu undefined
+        var bienUndefined;
+
+        // Kieu null
+        var bienNull = null;
+
+        // Thu in cac bien
+        document.write("</br>");
+        document.write("Bien name: " + name);
+
+        document.write("</br>");
+        document.write("Bien age: " + age);
+
+        document.write("</br>");
+        document.write("Bien isMale: " + isMale);
+
+        document.write("</br>");
+        document.write("Bien ten cua student: " + student.ten);
+
+        document.write("</br>");
+        document.write("Bien mausac cua capSach trong student: " + student.capSach.mauSac);
+
+        document.write("</br>");
+        document.write("Bien nameArray: " + nameArray);
+
+        document.write("</br>");
+        document.write("Phan tu dau tien cua nameArray: " + nameArray[0]);
+
+        document.write("</br>");
+        document.write("Gia tri cua bienUndefined: " + bienUndefined);
+
+        document.write("</br>");
+        document.write("Gia tri cua bienNull: " + null);
+    </script>
+</html>
