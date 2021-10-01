@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script>
+            var name = "Nguyen Van A";
+            var age = 19;
+            document.write("Kieu du lieu cua bien name: " + "<span style='color: red;'>" + (typeof name) + "</span>");
+            document.write("</br>");
+            document.write("Kieu du lieu cua bien age: " + "<span style='color: red;'>" + (typeof age) + "</span>");
+
+            // Phep toan co ban
+            var phepCong = 1 + 1;
+            var phepChu = 10 - 5;
+            var phepNhan = 2 * 2;
+            var phepChia = 10 / 2;
+            document.write("</br>");
+            document.write("Kieu du lieu cua bien phepCong (1+1): " + "<span style='color: red;'>" + phepCong + "</span>");
+            document.write("</br>");
+            document.write("Kieu du lieu cua bien phepChu (10 - 5): " + "<span style='color: red;'>" + phepChu + "</span>");
+            document.write("</br>");
+            document.write("Kieu du lieu cua bien phepNhan (2 * 2): " + "<span style='color: red;'>" + phepNhan + "</span>");
+            document.write("</br>");
+            document.write("Kieu du lieu cua bien phepChia (10 / 2): " + "<span style='color: red;'>" + phepChia + "</span>");
+
+            // Phep toan khac
+            var luyThua = 2 ** 3;
+            document.write("</br>");
+            document.write("Kieu du lieu cua bien luyThua (2 ** 3): " + "<span style='color: red;'>" + luyThua + "</span>");
+
+            var chiaLayDu = 3 % 2;
+            document.write("</br>");
+            document.write("Kieu du lieu cua bien chiaLayDu (3 % 2): " + "<span style='color: red;'>" + chiaLayDu + "</span>");
+
+            var soTang = 1;
+            soTang++; // soTang = soTang + 1;
+            document.write("</br>");
+            document.write("Kieu du lieu cua bien soTang (soTang = 1; soTang++): " + "<span style='color: red;'>" + soTang + "</span>");
+
+            var soGiam = 10;
+            soGiam--; //soGiam = soGiam - 1;
+            document.write("</br>");
+            document.write("Kieu du lieu cua bien soGiam (soGiam = 1; soGiam--): " + "<span style='color: red;'>" + soGiam + "</span>");
+
+            // Gan gia tri
+            var soTang1 = 2;
+            soTang1 += 10; // soTang1 = soTang1 + 10;
+            document.write("</br>");
+            document.write("Kieu du lieu cua bien soTang1 (soTang1 = 2; soTang1 +=10): " + "<span style='color: red;'>" + soTang1 + "</span>");
+
+            var soGiam1 = 6;
+            soGiam1 -= 10; // soGiam1 = soGiam1 + 10;
+            document.write("</br>");
+            document.write("Kieu du lieu cua bien soTang1 (soGiam1 = 2; soGiam1 +=10): " + "<span style='color: red;'>" + soGiam1 + "</span>");
+
+
+
+            // Phep so sanh
+            var soBe = 2;
+            var soLon = 20;
+            var lonHon = soBe > soLon;
+
+            var soBang1 = 1, soBang2 = 1;
+
+            document.write("</br>");
+            document.write("soBe > soLon (2 > 20 la sai): " + "<span style='color: red;'>" + lonHon + "</span>");
+            document.write("</br>");
+            document.write("soBe < soLon (2 < 20 la dung): " + "<span style='color: red;'>" + (soBe < soLon) + "</span>");
+            document.write("</br>");
+            document.write("soBang1 == soBang2 (1 == 1 la dung): " + "<span style='color: red;'>" + (soBang1 == soBang2) + "</span>");
+
+            document.write("</br>");
+            document.write("</br>");
+            // Vong lap for
+            document.write("Vong lap for");
+            for(var index = 1; index <= 10; index++) {
+                document.write("</br>");
+                document.write("So thu tu: " + index);
+            }
+            
+            document.write("</br>");
+            document.write("</br>");
+            // Vong lap while
+            document.write("Vong lap while");
+            var index = 1;
+            while (index <= 10) {
+                document.write("</br>");
+                document.write("So thu tu: " + index);
+                index++;
+            }
+            
+            document.write("</br>");
+            document.write("</br>");
+            // Ap dung for de in ra cac gia tri cua array
+            document.write("In ra cac phan tu cua array");
+            var danhSachHocSinh = ["NGuyen Van A", "Nguyen Van B", "Nguyen Van C"];
+            for (var index = 0; index < danhSachHocSinh.length; index++) {
+                document.write("</br>");
+                document.write("Hoc sinh so: " + (index + 1) + danhSachHocSinh[index]);
+            }
+            
+        </script>
+    </head>
+
+    <body>
+
+    </body>
+</html>
