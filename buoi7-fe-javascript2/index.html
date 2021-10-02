@@ -98,7 +98,72 @@
                 document.write("</br>");
                 document.write("Hoc sinh so: " + (index + 1) + danhSachHocSinh[index]);
             }
+
+
+            // Cau lenh dieu kien if/else
+
+            document.write("</br>");
+            document.write("</br>");
+            document.write("Vi du ve cau lenh if/else");
+            var age = 10;
+            // Neu tuoi lon 10 thi thong bao "Ban da qua tuoi"
+            if (age > 10) {
+                document.write("</br>");
+                document.write("So tuoi cua ban lon hon 10, ban da qua tuoi");
+            } else {
+                document.write("</br>");
+                document.write("So tuoi cua ban nho hon hoac bang 10, ban du tuoi");
+            }
+
+            document.write("</br>");
+            document.write("</br>");
+            document.write("Vi du ve cau lenh if/else 3 dieu kien");
+            if (age > 10) {
+                document.write("</br>");
+                document.write("So tuoi cua ban lon hon 10, ban da qua tuoi");
+            } else if (age == 10) {
+                document.write("</br>");
+                document.write("So tuoi cua ban bang 10, ban du tuoi");
+            } else {
+                document.write("</br>");
+                document.write("So tuoi cua ban nho hon hoac bang 10, ban du tuoi");
+            }
+
+            // Cau lenh switch case
+
+            document.write("</br>");
+            document.write("</br>");
+            document.write("Vi du switch case");
+            age = 232;
+            switch(age) {
+                case 10:
+                    document.write("</br>");
+                    document.write("So tuoi cua ban bang 10");
+                    break;
+                case 11:
+                    document.write("</br>");
+                    document.write("So tuoi cua ban bang 11");
+                    break;
+                default:
+                    document.write("</br>");
+                    document.write("So tuoi cua ban khong bang 10 va khong bang 11");
+                    break;
+            }
             
+            // Cach don gian nhat de nhap gia tri dau vao
+            // var nhapVao = window.prompt("Nhap bat ky gia tri nao:");
+            // document.write("</br>");
+            // document.write(nhapVao);
+
+            [
+                {"ten": "Nguyen Van A", "diem": 2},
+                {"ten": "Nguyen Van B", "diem": 8},
+                {"ten": "Nguyen Van C", "diem": 6},
+                {"ten": "Nguyen Van D", "diem": 9},
+                {"ten": "Nguyen Van E", "diem": 7},
+                {"ten": "Nguyen Van F", "diem": 2}
+            ]
+
         </script>
     </head>
 
