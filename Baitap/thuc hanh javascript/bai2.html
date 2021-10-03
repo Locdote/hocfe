@@ -3,7 +3,7 @@
     <head>
         <script>
             
-            var xepHang = window.prompt("nhap diem trung binh")
+            // Lay diem va ten cua tung hoc sinh trong danh sach
             var danhsach= [
                 {"ten": "Nguyen Van A", "diem": 2},
                 {"ten": "Nguyen Van B", "diem": 8},
@@ -11,23 +11,42 @@
                 {"ten": "Nguyen Van D", "diem": 9},
                 {"ten": "Nguyen Van E", "diem": 7},
                 {"ten": "Nguyen Van F", "diem": 2}
-            ];
-            if ( xepHang >= 9){
-                
-                document.write("Hang A");           
-            } else if ( xepHang >= 7){
-                document.write("Hang B");
-            } else if ( xepHang >= 5){
-                document.write("Hang C");
-            } else {
-                document.write("Hang F");
+            ]; // length = 6
+            for (var i=0; i<danhsach.length; i = i + 2) { //i=0 i=2 i=4
+                document.write("</br>");
+                // document.write((i+1) + "-" + danhsach[i].diem);
+                // document.write((i+1) + "-" + danhsach[i].ten);
+                if (danhsach[i].diem >=9){
+                    document.write(danhsach[i].ten+": hang A");
+                } else if(danhsach[i].diem >=7 && danhsach[i].diem < 9){
+                    document.write(danhsach[i].ten+": hang B");
+                } else if(danhsach[i].diem>=5 && danhsach[i].diem<7){
+                    document.write(danhsach[i].ten+": hang C");
+                } else{
+                    document.write(danhsach[i].ten+": hang F");
+                }
             }
+            //
+            //Nguyen Van A: hang F
+            //Nguyen Van C: hang C
+            //Nguyen Van E: hang B
+
+
           
             
-            
-            
-            
-            
+            // Kiem tra diem cua 1 hoc sinh
+            // var student = {"ten": "Nguyen Van A", "diem": 8};
+            // if(student.diem >= 9){
+            //     document.write("hang A");
+                
+            // }else if(student.diem >= 7 && student.diem < 9){
+            //     document.write("hang B");
+            // }else if(student.diem >=5 && student.diem <7){
+            //     document.write("hang C");
+            // }else{
+            //     document.write("hang F");
+            // }
+
         </script>
     </head>
     <body>
