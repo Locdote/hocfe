@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var thoigian=window.prompt(" Nhap vao thoi gian goi: ");
+            // phibatbuoc= 1000;
+            if (thoigian <= 50){
+                document.write("cuoc phi: "+(thoigian * 600 + 1000)+" VND")
+            }else if(thoigian >=51 && thoigian <= 200 ){
+                document.write("cuoc phi: "+((thoigian - 50 ) * 400 + (50 * 600) + 1000) +" VND")
+            }else {
+                document.write("cuoc phi: "+((thoigian - 200) * 200 + (50 * 600) + (150 * 400) +1000)+" VND")
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
