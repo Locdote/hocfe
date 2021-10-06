@@ -2,21 +2,21 @@
 <html>
     <head>
         <script>
-            var soNguyen=[3, 29, 23, 24, 9, 63, 88, 2, 4];
-            var soNguyen=[3, 29, 23, 24, 9, 63, 88, 2, 4];
-            var max= soNguyen[0];
-            var min= soNguyen[0];
-            for (var i = 0; i < soNguyen.length; i++) {
-               if (soNguyen[i] > max ){
-                   document.write("</br>");
-                   document.write("so lon nhat: "+ soNguyen[i]);              
+            var soNguyen1=[3, 29, 23, 24, 9, 63, 88, 2, 4];
+            var max= soNguyen1[0];
+            var min= soNguyen1[0];
+            for (var i = 0; i < soNguyen1.length; i++) { //i=0 i=1 i=2 i=3 i=4 i=5
+               if (soNguyen1[i] > max ) {
+                    max=soNguyen1[i]        //max=3 max=29   
                }
-               if (soNguyen[i] < min){
-                    document.write("</br>");
-                    document.write("so be nhat: "+ soNguyen[i]);
+               if (soNguyen1[i] < min) {
+                    min=soNguyen1[i] //min=3
                }
             }
-        </script>
+            document.write("so lon nhat: "+ max +"<br>");  
+            document.write("so be nhat: "+ min); 
+            document.write("<br>");
+            </script>
     </head>
     <body>
 

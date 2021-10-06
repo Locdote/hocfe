@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var soNguyen = [3, 29, 23, 24, 9, 63, 88, 2, 4];
+            var z=Array;
+            for(var i= 0; i < soNguyen.length; i++){ //i=0
+                for(var x=i+1; x < soNguyen.length-1; x++){ //x=1
+                    if(soNguyen[i]<soNguyen[x]){ //3<29
+                        z=soNguyen[i] ;
+                        soNguyen[i]=  soNguyen[x]  ;
+                        soNguyen[x] =z;
+                    }    
+                }
+            }      document.write(" Sap xep theo thu tu giam dan: " + z ) ; 
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
