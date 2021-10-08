@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script>
+
+        var toanTu = ["+", "*", "-", "/"];
+        var input = window.prompt("Nhap bieu thuc: ");
+
+        //2+3 mangSo=[2, 3]
+        var mangSo = [];
+        var inputToanTu = "";
+        var inputHopLe = false;
+        for (var i = 0; i < toanTu.length; i++) {
+            mangSo = input.split(toanTu[i]);
+            if (mangSo.length == 2 && (typeof +(mangSo[0]) == "number") && (typeof +(mangSo[1]) == "number")
+                && !isNaN(+mangSo[0]) && !isNaN(+mangSo[1])) {
+                inputHopLe = true;
+                inputToanTu = toanTu[i];
+                break;
+            }
+        }
+
+        if (!inputHopLe) {
+            document.write("Sai du lieu dau vao");
+        } else {
+            document.write(tinh(mangSo[0], mangSo[1], inputToanTu));
+        }
+
+        function tinh(soThuNhat, soThuHai, phepToan) {
+            var ketQua = 0;
+            switch (phepToan) {
+                case "+":
+                    ketQua = +soThuNhat + +soThuHai;
+                    break;
+                case "-":
+                    ketQua = +soThuNhat - +soThuHai;
+                    break;
+                case "*":
+                    ketQua = +soThuNhat * +soThuHai;
+                    break;
+                case "/":
+                    ketQua = +soThuNhat / +soThuHai;
+                    break;
+                default:
+                    break;
+            }
+            return ketQua;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

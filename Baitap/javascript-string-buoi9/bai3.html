@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script>
+        var input = window.prompt("Nhap chuoi ky tu: ");
+
+        //1.Xoa khoang trang o dau va cuoi
+        input = input.trim();
+
+        //2.Moi tu cach nhau bang dau -
+        input = input.replace(/ /gi, "-");
+
+        //3. Viet hoa chu dau tien cua chuoi
+        mangTu = input.split("-");
+        ketQua = "";
+        for (var i = 0 ; i < mangTu.length; i++) {
+            kyTuDauTien = mangTu[i].slice(0, 1);
+            phanConLai = mangTu[i].slice(1);
+            kyTuDauTien = kyTuDauTien.toUpperCase();
+
+            if (i == (mangTu.length - 1)) {
+                ketQua += kyTuDauTien + phanConLai;
+            } else {
+                ketQua += kyTuDauTien + phanConLai + "-";
+            }
+           
+        }
+        document.write(ketQua);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
