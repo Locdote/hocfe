@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            // day so fibonacci
+
+            var input = window.prompt("Nhap so:");
+
+            var danhSachSo = [1, 1];
+
+            if (input == 1)
+                document.write(1);
+            else if (input == 2) {
+                document.write("1,1");
+            } else {
+                for(var i = 3; i <= input; i++) {
+                    var tong = +danhSachSo[i-3] + +danhSachSo[i-3 + 1];
+                    danhSachSo.push(tong);
+                }
+                document.write(danhSachSo);
+            }
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

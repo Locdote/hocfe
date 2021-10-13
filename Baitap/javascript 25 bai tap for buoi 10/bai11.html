@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            // so nguyen to la so chi chia het cho 1 va chinh no
+
+            var input = window.prompt("Nhap so:");
+            var i = 0;
+            while (i <= input) {
+                if (coPhaiSoNguyenTo(i))
+                    document.write(i + " </br>");
+                i++;
+            }
+
+            function coPhaiSoNguyenTo(so){
+                var dem = 0;
+                var j = 1;
+                while (j <= so) {
+                    if ((so % j) == 0) {
+                        dem++;
+                    }
+                    j++;
+                }
+                return dem == 2 ? true : false;
+                // if (dem == 2){
+                //     return true;
+                // } else {
+                //     return false;
+                // }
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

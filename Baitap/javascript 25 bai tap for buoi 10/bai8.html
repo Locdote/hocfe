@@ -6,13 +6,17 @@
             var index=window.prompt("nhap cau bat ky:");
             var soTu=1;
             var soKyTu=0;
+            var kiemTra = false;
             for(i= 1; i<= (index.length); i++){  
+                kiemTra = true;
                 if( index[i] ==" ")
                 soTu++;
-                if( i>=0)
                 soKyTu++;
             }
-            document.write("so tu: "+soTu);
+            if (kiemTra)
+                document.write("so tu: "+soTu);
+            else 
+                document.write("so tu: "+ 0);
             document.write("</br>");
             document.write("So ky tu: "+soKyTu);
 

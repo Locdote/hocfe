@@ -3,8 +3,13 @@
     <head>
         <script>
             // nhap so duong n. chuong trinh ket thuc khi n la so am
-            var index=window.prompt("nhap so nguyen duong:"); 
-            while(index>0);
+             
+            var laSoDuong = true;
+            while(laSoDuong) {
+                var index=window.prompt("nhap so nguyen duong:");
+                if (+index < 0)
+                    laSoDuong = false;
+            }
 
         </script>
     </head>

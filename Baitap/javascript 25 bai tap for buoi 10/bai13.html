@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            // day so fibonacci
+
+            var input = window.prompt("Nhap so:");
+            var bienTam1=1;
+            var bienTam2=1;
+            var bienTam3=0;
+
+            document.write("1 1 ");
+            for (var i = 0; i < input; i = i + bienTam3) { // i = 0; i = 2; i = 5; i = 10
+                bienTam3 = bienTam1 + bienTam2; // bienTam3 = 2; 3, 5
+                bienTam1 = bienTam2; // bienTam1 = 1, 2, 3
+                bienTam2 = bienTam3; // bienTam2 = 2; 3, 5
+                document.write(bienTam3 + " ");
+            }
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
