@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        // nhap x va y. tim tong so chan va so le tu x den y
+            var x=window.prompt("nhap x:"); //5
+            var y=window.prompt("nhap y:"); //9
+            var tongChan=0;
+            var tongLe=0;
+            if(x< y){
+                for(i= x; i<= y; i++){ //i=5 i=6 i=7 i=8 i=9
+                    if (i% 2 !== 0) {
+                        tongLe=tongLe+ i; //tongle = 5  tongle =12 tongle= 21
+                    }else{
+                        tongChan=tongChan+ i; //tongchan=6  tongchan=14 
+                    } 
+                }document.write("tong le: "+tongLe+"</br>");
+                    document.write("tong chan: "+tongChan);
+            }
+            else{
+                for(i= x; i>= y; i--){ 
+                    if (i% 2 !== 0) {
+                        tongLe=tongLe+ i;  
+                    }else{
+                        tongChan=tongChan+ i; 
+                    } 
+                }document.write("tong le: "+ tongLe + "</br>");
+                    document.write("tong chan: "+ tongChan);
+            }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
