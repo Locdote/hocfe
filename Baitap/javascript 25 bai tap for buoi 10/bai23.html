@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        // Nhập một số nguyên dương n bất kỳ. Viết chương trình kiểm tra số n có phải là số nguyên tố không?
+            var input=window.prompt("nhap so nguyen duong:");
+
+            if (input <= 0) {
+                document.write("Nhap so nguyen duong!");
+            } else {
+                var dem = 0;
+                input = +input;
+                for (var i = 1; i <= input; i++) {
+                    if (input % i == 0)
+                        dem++;
+                }
+
+                if (dem == 2)
+                    document.write("day la so nguyen to");
+                else
+                    document.write("khong phai so nguyen to");
+            }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script>
+
+<head>
+    <script>
         // nhap so nguyen n in ra cac so tu n den -100. nhap lai neu n = -1
-            var input=window.prompt("nhap vao so nguyen:");
-            if (input == -1) {
-                var input=window.prompt("nhap lai "); 
-            }
-            if(input < -100){
-                for(i= input; i<= -100; i++){
-                    document.write(i+"</br>")
+        var input = window.prompt("nhap vao so nguyen:");
+
+        while (input == -1) {
+            var input = window.prompt("nhap lai ");
+        }
+
+        if (input != -1) {
+            if (input < -100) {
+                for (i = input; i <= -100; i++) {
+                    document.write(i + "</br>")
                 }
-            } else  
-                for(i= input; i>= -100; i--){
-                    document.write(i+"</br>");
-                }  
-        </script>
-    </head>
-    <body>
-    </body>
+            } else
+                for (i = input; i >= -100; i--) {
+                    document.write(i + "</br>");
+                }
+        }
+
+
+    </script>
+</head>
+
+<body>
+</body>
+
 </html>

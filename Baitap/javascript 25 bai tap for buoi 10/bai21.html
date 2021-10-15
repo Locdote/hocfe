@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        // Nhập một số nguyên dương n. Viết chương trình kiểm tra số n có phải là số hoàn hảo hay không?
+            var input=window.prompt("nhap so nguyen duong:");
+
+            if (input <= 0) {
+                document.write("Nhap so nguyen duong!");
+            } else {
+                var danhSachUoc = layUoc(input);
+                var ketQua = 0;
+                for (var i = 0; i < danhSachUoc.length; i++) {
+                    ketQua += +danhSachUoc[i];
+                }
+                if (ketQua == 1) {
+                    document.write("Day ko khong phai so hoan hao");
+                } else {
+                    document.write("Day la so hoan hao");
+                }
+            }
+            
+            function layUoc(so) {
+                var danhSachUoc = [];
+                so = +so;
+                for (var i = 1; i < so; i++) {
+                    if (so % i == 0) {
+                        danhSachUoc.push(i);
+                    }
+                }
+                return danhSachUoc;
+            }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
