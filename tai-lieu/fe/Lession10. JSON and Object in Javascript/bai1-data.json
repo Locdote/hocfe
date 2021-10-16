@@ -1,0 +1,10 @@
+{
+   "id":"0001",
+   "type":"Cake",
+   "name":"Donut",
+   "image":{
+      "color":"brown",
+      "shape":"square",
+      "description":"good to taste"
+   }
+}
