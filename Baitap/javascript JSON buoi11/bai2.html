@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        var dataStr = '{' +
+            '"items": [' +
+            '{' +
+            '"id": "0001",' +
+            '"type": "Cake",' +
+            '"name": "donut",' +
+            '"price": "0.55",' +
+            '"batters": {' +
+            '"batter": [' +
+            '{' +
+            '"id": "1001",' +
+            '"type": "Regular"' +
+            '},' +
+            '{' +
+            '"id": "1002",' +
+            '"type": "Chocolate"' +
+            '}' +
+            ']' +
+            '},' +
+            '"topping": [' +
+            '{' +
+            '"id": "5001",' +
+            '"type": "None"' +
+            '},' +
+            '{' +
+            '"id": "5002",' +
+            '"type": "Glazed"' +
+            '},' +
+            '{' +
+            '"id": "5003",' +
+            '"type": "Maple"' +
+            '}' +
+            ']' +
+            '}' +
+            ']' +
+            '}';
+
+        var dataObject = JSON.parse(dataStr);
+
+        var arrayItems = dataObject.items;
+        var firstItem = arrayItems[0];
+        document.write("id: " + firstItem.id + "</br>");
+        document.write("type: " + firstItem.type + "</br>");
+        document.write("name: " + firstItem.name + "</br>");
+        document.write("price: " + firstItem.price + "</br>");
+        document.write("====================================</br>");
+        
+        var batters = firstItem.batters;
+        var batterArray = batters.batter;
+        var batter1 = batterArray[0], batter2 = batterArray[1];
+        document.write("batter id0: " + batter1.id + "</br>");
+        document.write("batter type0: " + batter1.type + "</br>");
+        document.write("batter id1: " + batter2.id + "</br>");
+        document.write("batter type1: " + batter2.type + "</br>");
+
+        document.write("====================================</br>");
+        var toppingArray = firstItem.topping;
+        for (var i = 0; i< toppingArray.length; i++) {
+            document.write("topping id" + i + ": " + toppingArray[i].id + "</br>");
+            document.write("topping type" + i + ": " + toppingArray[i].type + "</br>");
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

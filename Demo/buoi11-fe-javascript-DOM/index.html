@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Long dep trai</title>
+    </head>
+
+    <body>
+        <table border="1">
+            <tr>
+                <td>So thu nhat</td>
+                <td><input type="text" placeholder="So thu nhat" id="soThuNhat"/></td>
+            </tr>
+            <tr>
+                <td>So thu hai</td>
+                <td><input type="text" placeholder="So thu hai" id="soThuHai"/></td>
+            </tr>
+            <tr>
+                <td><p id="hienKetQua"></p></td>
+                <td><input type="button" id="tinhTong" value="Tinh Tong" onclick="tinhTong()"/></td>
+            </tr>
+        </table>
+        
+
+        <script>
+            function tinhTong() {
+                var soThuNhat = document.getElementById("soThuNhat");
+                var soThuHai = document.getElementById("soThuHai");
+
+                var ketQua = +soThuNhat.value + +soThuHai.value;
+
+                var hienKetQua = document.getElementById("hienKetQua");
+                hienKetQua.innerHTML = "Ket qua: " + ketQua;
+            }
+        </script>
+    </body>
+
+</html>

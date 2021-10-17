@@ -2,28 +2,25 @@
 <html>
     <head>
         <script>
-            var data={
-                "id":"0001",
-                "type":"Cake",
-                "name":"Donut",
-                "image":{
-                    "color":"brown",
-                    "shape":"square",
-                    "description":"good to taste"
-                    }
-                }
-                var image= data.image;
-                var array = [];
-               
-              
-                
-                for(i in data){
-                    document.write(i+": "+ data[i]+"</br>");
-                }
-                for(i in image){
-                    document.write(i+": "+ image[i]+"</br>");
-                }
-              
+            var dataStr ='{"id":"0001", "type":"Cake", "name":"Donut", "image":{ "color":"brown", "shape":"square", "description":"good to taste"}}';
+
+            var dataObject = JSON.parse(dataStr);
+
+            document.write("id: " + dataObject.id);
+            document.write("</br>");
+            document.write("type: " + dataObject.type);
+            document.write("</br>");
+            document.write("name: " + dataObject.name);
+            document.write("</br>");
+
+            var imageObject = dataObject.image;
+            document.write("image-color: " + imageObject.color);
+            document.write("</br>");
+            document.write("image-shape: " + imageObject.shape);
+            document.write("</br>");
+            document.write("image-description: " + imageObject.description);
+            document.write("</br>");
+
         </script>
     </head>
     <body>
