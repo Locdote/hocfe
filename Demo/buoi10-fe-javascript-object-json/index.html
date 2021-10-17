@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script>
+        // Khai bao object - cach 1
+        var student = {
+            ten: "Nguyen Van A",
+            tuoi: 10,
+            gioiTinh: "nam"
+        }
+
+        // Khai bao object - cach 2
+        var student1 = new Object();
+        student1.ten = "Nguyen Van B";
+        student1.tuoi = 22;
+        student1.gioiTinh = "Nu";
+
+        // Khai bao object - cach 3
+        var student2 = new Object({
+            ten: "Nguyen Van C",
+            tuoi: 11,
+            gioiTinh: "nam"
+        });
+
+        document.write("In thuoc tinh ten cua 3 student</br>");
+        document.write("student.ten: " + student.ten + "</br>");
+        document.write("student1.ten: " + student1.ten + "</br>");
+        document.write("student2.ten: " + student2.ten + "</br>");
+
+        // In toan bo thuoc tinh va gia tri cua 1 object
+
+        document.write("</br>"); document.write("</br>");
+        document.write("In toan bo thuoc tinh va gia tri cua student</br>");
+        for (properties in student) {
+            document.write(properties + ": " + student[properties] + "</br>");
+        }
+
+
+        // Dinh nghia 1 object
+        function Dienthoai(manHinh, banPhim, ram) {
+            // this.manHinh la thuoc tinh manHinh
+            // manHinh chi la bien chuyen vao
+            this.manHinh1 = manHinh;
+            this.banPhim = banPhim;
+            this.ram = ram;
+            this.inRa = function() {
+                document.write("</br>"); document.write("</br>");
+                document.write("In toan bo thuoc tinh va gia tri cua " + this.constructor.name + "</br>");
+                for (properties in this) {
+                    if (properties != "inRa")
+                        document.write(properties + ": " + this[properties] + "</br>");
+                }
+            }
+        }
+
+        var dienThoaiSamSung = new Dienthoai("man hinh cam ung", "ban phim cam ung", "4GB");
+        dienThoaiSamSung.manHinh1 = "man hinh cam ung 1";
+        dienThoaiSamSung.inRa();
+
+        var diemThoaiIPhone = new Dienthoai("Man hinh ip", "ban phim quote", "100GB");
+        diemThoaiIPhone.inRa();
+
+        // document.write("</br>"); document.write("</br>");
+        // document.write("In toan bo thuoc tinh va gia tri cua diemThoaiIPhone</br>");
+        // for (properties in diemThoaiIPhone) {
+        //     document.write(properties + ": " + diemThoaiIPhone[properties] + "</br>");
+        // }
+
+        // Chuyen json string sang object
+        var jsonText = '{"manHinh2": "man hinh 123", "banPhim2": "ban phim AA", "ram2": "2GB"}';
+        var diemThoaiIPhoneText = JSON.parse(jsonText);
+
+        var tenobject.key, tenaray[0]
+
+        document.write("</br>"); document.write("</br>");
+        document.write("Sau khi chuyen string json thanh object diemThoaiIPhoneText</br>");
+        document.write("In toan bo thuoc tinh va gia tri cua diemThoaiIPhoneText</br>");
+        for (properties in diemThoaiIPhoneText) {
+            document.write(properties + ": " + diemThoaiIPhoneText[properties] + "</br>");
+        }
+
+        // chuyen dienThoaiSamSung thanh json string
+        document.write("</br>"); document.write("</br>");
+        document.write("Sau khi chuyen dienThoaiSamSung thanh json string dienThoaiSamSungString</br>");
+        var dienThoaiSamSungString = JSON.stringify(dienThoaiSamSung);
+        document.write("Gia tri cua dienThoaiSamSungString: " + dienThoaiSamSungString);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
