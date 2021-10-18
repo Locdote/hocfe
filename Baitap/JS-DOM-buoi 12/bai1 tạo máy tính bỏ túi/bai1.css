@@ -9,3 +9,8 @@
 div{
     margin: 200px 500px;
 }
+
+#output {
+    text-align: right;
+    
+}

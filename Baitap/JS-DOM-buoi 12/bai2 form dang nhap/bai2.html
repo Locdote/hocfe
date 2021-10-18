@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: chartreuse;
+        }
+
+        div {
+            height: 200px;
+            width: 200px;
+            border: solid 1px;
+            background-color: white;
+            margin: auto;
+
+        }
+
+        .user {
+            margin: 10px;
+        }
+
+        .pass {
+            margin: 10px;
+        }
+
+        button {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input class="user" type="text" placeholder="username">
+        <input class="pass" type="password" placeholder="password">
+        <input type="button" value="login" onclick="dangNhap()">
+        <h1 style="color: red;" id="thongbao"></h1>
+    </div>
+</body>
+<script>
+
+    function dangNhap() {
+        var user = document.getElementsByClassName('user')[0];
+        var pass = document.getElementsByClassName('pass')[0];
+
+        if (user.value == "admin" && pass.value == "123456") {
+            window.location = "bai2-hello.html";
+        } else {
+            document.getElementById("thongbao").innerHTML = "Sai mat khau hoac ten dang nhap";
+        }
+    }
+</script>
+
+</html>

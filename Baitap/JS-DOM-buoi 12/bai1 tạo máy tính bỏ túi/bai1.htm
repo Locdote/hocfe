@@ -7,34 +7,34 @@
         <div>
             <table >
                 <tr >
-                    <td colspan="4"> <input type="text" > </td>
+                    <td colspan="4"> <input type="text" id="output" readonly="true"> </td>
                 </tr>
                 <tr>
-                    <td><input class="phim" type="button" value="7" > </td>
-                    <td><input class="phim" type="button" value="8" > </td>
-                    <td><input class="phim" type="button" value="9" > </td>
-                    <td><input class="phim" type="button" value="+" > </td>
+                    <td><input class="phim" type="button" value="7" onclick="ghiSo(this)" onkeydown="ghiSo(this)"> </td>
+                    <td><input class="phim" type="button" value="8" onclick="ghiSo(this)" onkeydown="ghiSo(this)"> </td>
+                    <td><input class="phim" type="button" value="9" onclick="ghiSo(this)" onkeydown="ghiSo(this)"> </td>
+                    <td><input class="phim" type="button" value="+" onclick="ghiPhepTinh(this)"> </td>
                 </tr>
                 <tr>
-                    <td><input class="phim" type="button" value="4"> </td>
-                    <td><input class="phim" type="button" value="5"> </td>
-                    <td><input class="phim" type="button" value="6"> </td>
-                    <td><input class="phim" type="button" value="-"> </td>
+                    <td><input class="phim" type="button" value="4" onclick="ghiSo(this)"> </td>
+                    <td><input class="phim" type="button" value="5" onclick="ghiSo(this)"> </td>
+                    <td><input class="phim" type="button" value="6" onclick="ghiSo(this)"> </td>
+                    <td><input class="phim" type="button" value="-" onclick="ghiPhepTinh(this)"> </td>
                 </tr>
                 <tr>
-                    <td><input class="phim" type="button" value="1"> </td>
-                    <td><input class="phim" type="button" value="2"> </td>
-                    <td><input class="phim" type="button" value="3"> </td>
-                    <td><input class="phim" type="button" value="*"> </td>
+                    <td><input class="phim" type="button" value="1" onclick="ghiSo(this)"> </td>
+                    <td><input class="phim" type="button" value="2" onclick="ghiSo(this)"> </td>
+                    <td><input class="phim" type="button" value="3" onclick="ghiSo(this)"> </td>
+                    <td><input class="phim" type="button" value="*" onclick="ghiPhepTinh(this)"> </td>
                 </tr>
                 <tr>
-                    <td><input class="phim" type="button" value="0"> </td>
-                    <td><input class="phim" type="button" value="C"> </td>
-                    <td><input class="phim" type="button" value="="> </td>
-                    <td><input class="phim" type="button" value="/"> </td>
+                    <td><input class="phim" type="button" value="0" onclick="ghiSo(this)"> </td>
+                    <td><input class="phim" type="button" value="C" onclick="xoaHet()"> </td>
+                    <td><input class="phim" type="button" value="=" onclick="inKetQua()"> </td>
+                    <td><input class="phim" type="button" value="/" onclick="ghiPhepTinh(this)"> </td>
                 </tr>
                 <tr  >
-                    <td ><input class="phim" type="button" value="Del"> </td>
+                    <td ><input class="phim" type="button" value="Del" onclick="xoaKyTuCuoi()"> </td>
                 </tr>
             </table>
         </div>
