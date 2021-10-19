@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            #clock{
-                font-size: 300px
-            }
-        </style>
-     
-    </head>
-    <body >
-        <div id="clock"></div>
-    </body>
-    <script>
- function dongho() {
-     var thoigian= new Date();
-     var gio= thoigian.getHours();
-     var phut= thoigian.getMinutes();
-     var giay= thoigian.getSeconds();
-     document.getElementById("clock").
-     innerHTML=gio+":"+phut+":"+giay;   
- }
- dongho();
-    </script>
+
+<head>
+    <style>
+        #clock {
+            font-size: 300px
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="clock"></div>
+</body>
+<script>
+    function dongho() {
+        var thoigian = new Date();
+        var gio = thoigian.getHours();
+        var phut = thoigian.getMinutes();
+        var giay = thoigian.getSeconds();
+        document.getElementById("clock").innerHTML = gio + ":" + phut + ":" + giay;
+    }
+    setInterval(dongho, 1000);
+</script>
+
 </html>

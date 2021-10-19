@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {
+                border: solid 1px black;
+                min-width: 100%;
+                min-height: 300px;
+            }
+
+            .tieuDe {
+                font-weight: bold;
+                font-size: 150%;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Day la the p 1</p>
+        <p>Day la the p 2</p>
+        <h2 class="test">Day la the h2</h2>
+        <h3 id="test">Day la the h3</h3>
+        <h4 id="test-h4">Day la the h4</h4>
+
+        
+        <button id="button-thongbao">Hien thong bao</button>
+
+
+        <div id="container">
+            <p id="tieuDe"></p>
+            <p id="tieuDeXoa">Tieu de nay se bi an di</p>
+            <input id="taiKhoan" type="text"/>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // lay element bang ten the
+                $("p").eq(0).css("color", "red");
+
+                // lay element bang ten class
+                $(".test").css("background-color", "blue");
+
+                // lay element bang ten id
+                //$("#test").hide(3000);
+                $("#test").hide();
+                $("#test").fadeIn(3000);
+                $("#test").fadeOut(3000);
+
+                $("#test-h4").hide();
+                $("#test-h4").slideDown(2000);
+
+                // su ly su kien click
+                $("#button-thongbao").click(function(){
+                    alert("da an vao thong bao");
+                });
+
+                // su ly su kien hover
+                $("#button-thongbao").hover(function(){
+                    $(this).css("background-color", "yellow");
+                });
+
+                // su ly su kien chuyen vao ham on()
+                $("#button-thongbao").on("mouseleave", function(){
+                    $(this).css("background-color", "white");
+                });
+
+
+                // demo text() va attr()
+                $("#tieuDe").text("Xin hay dang nhap").attr("class", "tieuDe");
+
+                // demo val() chi co hieu luc voi the input
+                $("#taiKhoan").val("admin");
+
+                // demo append() them html vao cuoi cung cua 1 phan tu
+                $("#container").append("<input type='password' />");
+
+
+                setTimeout(function(){
+                    // xoa toan bo phan tu duoc goi
+                    $("#tieuDeXoa").remove();
+                }, 3000);
+
+                setTimeout(function(){
+                    // xoa toan bo phan tu ben trong phan tu duoc goi
+                    $("#container").empty();
+                }, 6000);
+            });
+        </script>
+    </body>
+</html>
