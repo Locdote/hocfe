@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .formDangKy{
+                height: 500px ;
+                width: 400px ;
+                border: solid 1px black ;
+                margin: auto;
+            }
+            .title{
+                background-color: aqua;
+                width: 100%;
+                height: 50px;
+                text-align: center;
+            }
+            h3{
+                margin: 0;
+                padding-top: 10px;
+            }
+            h4{
+                margin: 0;
+                padding-top: 10px;
+                padding-left: 10px;
+            }
+            input.nhap{
+                margin-left: 10px;
+                margin-bottom: 10px;
+                width: 90%;   
+            }
+        </style>
+        <script src= "https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+        <script>
+                function thongbao() {
+                    var user        = document.getElementById("username");
+                    var email       = document.getElementById("Email");
+                    var pass        = document.getElementById("password");
+                    var nhapLaiPass = document.getElementById("nhapLaiPassword");
+                    var SDT         = document.getElementById("SDT");
+                    var diaChi      = document.getElementById("diaChi");
+                    if (user.value == "" || email.value == "" || pass.value == ""|| nhapLaiPass.value == "" || SDT.value == "" || diaChi.value == "") {
+                        document.getElementById("baoloi").innerHTML = "Không được để trống thông tin";
+                    }
+                }
+        </script> 
+    </head>
+    <body>
+        <div id="formDangKy">
+            <div class="title"> <h3 >Đăng ký tài khoản </h3> </div>
+            <h4>Tên</h4>
+            <input type="text" class="nhap" id= "username" >
+            <h4>Email</h4>
+            <input type="email" class="nhap" id= "Email" >
+            <h4>Mật khẩu</h4>
+            <input type="password" class="nhap"  id= "password">
+            <h4>Xác nhận mật khẩu</h4>
+            <input type="password" class="nhap"  id= "nhapLaiPassword">
+            <h4>Số điện thoại</h4>
+            <input type="text" class="nhap" id="SDT">
+            <h4>Nhập địa chỉ</h4>
+            <input type="text" class="nhap" id= "diaChi"></br>
+            <p id= "baoloi"></p>
+            <input type="button" id="dangKy" value="Tạo tài khoản" onclick="thongbao()">
+        </div>
+    </body>
+</html>
