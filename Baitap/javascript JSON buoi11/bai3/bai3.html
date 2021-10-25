@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .container {
+            border: 1px solid black;
+            margin: auto;
+            padding: 30px;
+            min-height: 200px;
+            text-align: center;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        td, tr {
+            min-width: 200px;
+            min-height: 200px;
+        }
+
+        img:hover {
+            background-color: cyan;
+            cursor: pointer;
+        }
+
+        table {
+            margin: auto;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var cardArray = [
+            { "id": "1", "url": "images/anh1.jpg" },
+            { "id": "4", "url": "images/anh4.jpg" },
+            { "id": "6", "url": "images/anh6.jpg" },
+            { "id": "2", "url": "images/anh2.jpg" },
+            { "id": "1", "url": "images/anh1.jpg" },
+            { "id": "3", "url": "images/anh3.jpg" },
+            { "id": "5", "url": "images/anh5.jpg" },
+            { "id": "3", "url": "images/anh3.jpg" },
+            { "id": "7", "url": "images/anh7.jpg" },
+            { "id": "4", "url": "images/anh4.jpg" },
+            { "id": "5", "url": "images/anh5.jpg" },
+            { "id": "6", "url": "images/anh6.jpg" },
+            { "id": "7", "url": "images/anh7.jpg" },
+            { "id": "8", "url": "images/anh8.jpg" },
+            { "id": "8", "url": "images/anh8.jpg" },
+            { "id": "2", "url": "images/anh2.jpg" }
+        ]
+
+        function taoCard() {
+            $("#table-container").empty();
+            var trId = "0";
+            for (var i = 0, count = 0; i < cardArray.length; i++, count++) {
+                if (count % 4 == 0) {
+                    trId = count;
+                    $("#table-container").append("<tr id='tr" + count + "'><td><img id='realId" + i + "' id-anh='id" + cardArray[i].id + "' url-anh='" + cardArray[i].url + "'/></td></tr>")
+                } else {
+                    var targetId = "#tr" + trId;
+                    $(targetId).append("<td><img id='realId" + i + "' id-anh='id" + cardArray[i].id + "' url-anh='" + cardArray[i].url + "'/></td>");
+                }
+            }
+        }
+
+        var click1 = { "realId": "", "idAnh": "" };
+        var click2 = { "realId": "", "idAnh": "" };
+
+        function taoSuKien() {
+            $("img").on("click", function () {
+                if (click1.idAnh == "") {
+                    click1.idAnh = $(this).attr("id-anh");
+                    click1.realId = $(this).attr("id");
+                    $(this).attr("src", $(this).attr("url-anh"));
+                    console.log("click1: " + click1.idAnh);
+                } else {
+                    click2.idAnh = $(this).attr("id-anh");
+                    click2.realId = $(this).attr("id");
+                    $(this).attr("src", $(this).attr("url-anh"));
+                    console.log("click1: " + click2.idAnh);
+                    if (click1.idAnh == click2.idAnh) {
+                        var idAnh1 = "#" + click1.realId;
+                        var idAnh2 = "#" + click2.realId;
+                        $(idAnh1).remove();
+                        $(idAnh2).remove();
+                        console.log("dieu kien 1");
+                    } else {
+                        var idAnh1 = "#" + click1.realId;
+                        var idAnh2 = "#" + click2.realId;
+                        setTimeout(function () {
+                            $(idAnh1).removeAttr("src");
+                            $(idAnh2).removeAttr("src");
+                        }, 1000);
+                        console.log("dieu kien 2");
+                    }
+                    click1 = { "realId": "", "idAnh": "" };
+                    click2 = { "realId": "", "idAnh": "" };
+                }
+            });
+        }
+        
+        $(document).ready(function () {
+            taoCard();
+            taoSuKien();
+
+
+            $("button").on("click", function () {
+                taoCard();
+                click1 = { "realId": "", "idAnh": "" };
+                click2 = { "realId": "", "idAnh": "" };
+                taoSuKien();
+            })
+            // $.each(cardArray, function (i, value) {
+            //     alert(i + ": " + value.id);
+            // });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <button style="margin: auto">Lam moi</button>
+        <table class="board" id="table-container">
+
+        </table>
+    </div>
+</body>
+
+</html>
