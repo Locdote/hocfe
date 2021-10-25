@@ -31,36 +31,68 @@
         </style>
         <script src= "https://code.jquery.com/jquery-3.6.0.min.js"> </script>
         <script>
-                function thongbao() {
-                    var user        = document.getElementById("username");
-                    var email       = document.getElementById("Email");
-                    var pass        = document.getElementById("password");
-                    var nhapLaiPass = document.getElementById("nhapLaiPassword");
-                    var SDT         = document.getElementById("SDT");
-                    var diaChi      = document.getElementById("diaChi");
-                    if (user.value == "" || email.value == "" || pass.value == ""|| nhapLaiPass.value == "" || SDT.value == "" || diaChi.value == "") {
-                        document.getElementById("baoloi").innerHTML = "Không được để trống thông tin";
-                    }
-                }
+            $(document).ready(function(){
+                    var user        = $("#username").val();
+                    var email       = $("#Email").val()
+                    var pass        = $("#password").val();
+                    var nhapLaiPass = $("#nhapLaiPassword").val();
+                    var SDT         = $("#SDT").val();
+                    var diaChi      = $("#diaChi").val();
+                    $("#taoTaiKhoan").click(function(){
+                        if( user < 6 ){
+                            $("#loiUser").text("Tai khoan phai co it nhat 6 ky tu");
+                        }
+                        if( pass < 6 ){
+                            $("#loiPass").text("Mat khau phai co it nhat 6 ky tu va 1 ky tu a-z");
+                        }
+                        if( pass = nhapLaiPass){
+                            $("#loiPass1").text("");
+                        } else{
+                            $("#loiPass1").text("Mat khau nhap lai khong trung khop");
+                        }
+                        if( user == "" || email == "" || pass == ""|| nhapLaiPass == "" || SDT == "" || diaChi == ""){
+                            $("p").text("Không được để trống thông tin");
+                        }
+                    });    
+                    
+            });
+
+                // function thongbao() {
+                //     var user        = document.getElementById("username");
+                //     var email       = document.getElementById("Email");
+                //     var pass        = document.getElementById("password");
+                //     var nhapLaiPass = document.getElementById("nhapLaiPassword");
+                //     var SDT         = document.getElementById("SDT");
+                //     var diaChi      = document.getElementById("diaChi");
+                //     if (user.value == "" || email.value == "" || pass.value == ""|| nhapLaiPass.value == "" || SDT.value == "" || diaChi.value == "") {
+                //         document.getElementById("baoloi").innerHTML = "Không được để trống thông tin";
+                //     }
+                // } 
         </script> 
     </head>
     <body>
         <div id="formDangKy">
             <div class="title"> <h3 >Đăng ký tài khoản </h3> </div>
             <h4>Tên</h4>
-            <input type="text" class="nhap" id= "username" >
+            <input type="text" class="nhap" id= "username" value="" ></br>
+            <span id="loiUser"></span>
             <h4>Email</h4>
-            <input type="email" class="nhap" id= "Email" >
+            <input type="email" class="nhap" id= "Email" value="" ></br>
+            <span id="loiEmail"></span>
             <h4>Mật khẩu</h4>
-            <input type="password" class="nhap"  id= "password">
+            <input type="password" class="nhap"  id= "password" value=""></br>
+            <span id="loiPass"></span>
             <h4>Xác nhận mật khẩu</h4>
-            <input type="password" class="nhap"  id= "nhapLaiPassword">
+            <input type="password" class="nhap"  id= "nhapLaiPassword" value=""></br>
+            <span id="loiPass1"></span>
             <h4>Số điện thoại</h4>
-            <input type="text" class="nhap" id="SDT">
+            <input type="text" class="nhap" id="SDT" value=""></br>
+            <span id="loiSdt"></span>
             <h4>Nhập địa chỉ</h4>
-            <input type="text" class="nhap" id= "diaChi"></br>
+            <input type="text" class="nhap" id= "diaChi" value=""></br>
+            <span id="loiDiachi"></span>
             <p id= "baoloi"></p>
-            <input type="button" id="dangKy" value="Tạo tài khoản" onclick="thongbao()">
+            <input type="button" id="taoTaiKhoan" value="Tao Tai Khoan" >
         </div>
     </body>
 </html>
