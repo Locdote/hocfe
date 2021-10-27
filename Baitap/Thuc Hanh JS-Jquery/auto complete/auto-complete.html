@@ -1,53 +1,71 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src= "https://code.jquery.com/jquery-3.6.0.min.js"> </script>
-        <script>
-            $(document).ready(function(){
-                $("table").hide();
-                $("#autocomplete").on("keyup", function(){
-                    // $("#search").hide();
-                        var tukhoa=$(this).val().toLowerCase();
-                    // var thuvien=["Brunei","Campuchia","Indonesia","Lào","Malaysia","Myanmar","Philippines","Singapore","Thái Lan","Việt Nam"];
-                        $("#search tr").filter(function(){
-                            $(this).toggle($(this).text().toLowerCase().indexOf(tukhoa)>-1);
-                            $("#search").show();
-                           
-                        });
-                });
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+    <script>
+        $(document).ready(function () {
+            $("#search").hide();
+            // $("#autocomplete").on("keyup", function () {
+            //     var tukhoa = $(this).val().toLowerCase();
+            //     // var thuvien=["Brunei","Campuchia","Indonesia","Lào","Malaysia","Myanmar","Philippines","Singapore","Thái Lan","Việt Nam"];
+            //     $("#search tr").filter(function () {
+            //         $(this).toggle($(this).text().toLowerCase().indexOf(tukhoa) > -1);
+            //     });
+            //     $("#search").show();
+            // });
+            var thuvien = ["Brunei", "Campuchia", "Indonesia", "Lao", "Malaysia", "Myanmar", "Philippines", "Singapore", "Thai Lan", "Viet Nam"];
+            $("#autocomplete").on("keyup", function () {
+                var text = $(this).val();
+                if (text == "") {
+                    $("#search").hide();
+                } else {
+                    var htmlText = "";
+                    var ketQuaArray = kiemTraKey(text);
+                    $(ketQuaArray).each(function (index, value) {
+                        htmlText += "<tr><td>" + value + "</td></tr>";
+                    });
+                    $("#search").empty();
+                    $("#search").append(htmlText);
+                    if (ketQuaArray.length > 0) {
+                        $("#search").show();
+                        fillUp();
+                    }
+                }
             });
-        </script>
-    </head>
-    <body>
-            <input type="text" id="autocomplete" onkeyup="myFunction()">
-            <table id="search">
-                <tr>
-                    <td>Brunei</td>
-                </tr>
-                <tr>
-                    <td>Campuchia</td>
-                </tr>
-                <tr>
-                    <td>Indonesia</td>
-                </tr>
-                <tr>
-                    <td>Lào</td>
-                </tr>
-                <tr>
-                    <td>Malaysia</td>
-                </tr>
-                <tr>
-                    <td>Philippines</td>
-                </tr>
-                <tr>
-                    <td>Singapore</td>
-                </tr>
-                <tr>
-                    <td>Thái Lan</td>
-                </tr>
-                <tr>
-                    <td>Việt Nam</td>
-                </tr>
-            </table>
-    </body>
+
+            function fillUp() {
+                $("tr > td").on("click", function() {
+                    $("#autocomplete").val($(this).text());
+                    $("#search").empty();
+                    $("#search").hide();
+                });
+            }
+
+            function kiemTraKey(key) {
+                var ketQua = [];
+                $(thuvien).each(function (index, value) {
+                    if (value.match(`${key}`)) {
+                        ketQua.push(value);
+                        return;
+                    }
+                });
+                return ketQua;
+            }
+        });
+    </script>
+    <style>
+        tr > td:hover {
+            background-color: darksalmon;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="autocomplete">
+    <table id="search">
+    </table>
+</body>
+
 </html>
