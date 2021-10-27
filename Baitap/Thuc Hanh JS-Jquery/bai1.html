@@ -1,61 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            .formDangKy{
-                height: 500px ;
-                width: 400px ;
-                border: solid 1px black ;
-                margin: auto;
-            }
-            .title{
-                background-color: aqua;
-                width: 100%;
-                height: 50px;
-                text-align: center;
-            }
-            h3{
-                margin: 0;
-                padding-top: 10px;
-            }
-            h4{
-                margin: 0;
-                padding-top: 10px;
-                padding-left: 10px;
-            }
-            input.nhap{
-                margin-left: 10px;
-                margin-bottom: 10px;
-                width: 90%;   
-            }
-        </style>
-        <script src= "https://code.jquery.com/jquery-3.6.0.min.js"> </script>
-        <script>
-            $(document).ready(function(){
-                    var user        = $("#username").val();
-                    var email       = $("#Email").val()
-                    var pass        = $("#password").val();
-                    var nhapLaiPass = $("#nhapLaiPassword").val();
-                    var SDT         = $("#SDT").val();
-                    var diaChi      = $("#diaChi").val();
-                    $("#taoTaiKhoan").click(function(){
-                        if( user < 6 ){
-                            $("#loiUser").text("Tai khoan phai co it nhat 6 ky tu");
-                        }
-                        if( pass < 6 ){
-                            $("#loiPass").text("Mat khau phai co it nhat 6 ky tu va 1 ky tu a-z");
-                        }
-                        if( pass = nhapLaiPass){
-                            $("#loiPass1").text("");
-                        } else{
-                            $("#loiPass1").text("Mat khau nhap lai khong trung khop");
-                        }
-                        if( user == "" || email == "" || pass == ""|| nhapLaiPass == "" || SDT == "" || diaChi == ""){
-                            $("p").text("Không được để trống thông tin");
-                        }
-                    });    
-                    
+
+<head>
+    <style>
+        .formDangKy {
+            height: 500px;
+            width: 400px;
+            border: solid 1px black;
+            margin: auto;
+        }
+
+        .title {
+            background-color: aqua;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+        }
+
+        h3 {
+            margin: 0;
+            padding-top: 10px;
+        }
+
+        h4 {
+            margin: 0;
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+
+        input.nhap {
+            margin-left: 10px;
+            margin-bottom: 10px;
+            width: 90%;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+    <script>
+        $(document).ready(function () {
+
+            $("#taoTaiKhoan").click(function () {
+                var user = $("#username").val();
+                var email = $("#Email").val()
+                var pass = $("#password").val();
+                var nhapLaiPass = $("#nhapLaiPassword").val();
+                var SDT = $("#SDT").val();
+                var diaChi = $("#diaChi").val();
+                $("span").text("");
+                $("#baoloi").text("");
+
+                if (user == "" || email == "" || pass == "" || nhapLaiPass == "" || SDT == "" || diaChi == "") {
+                    $("p").text("Không được để trống thông tin");
+                } else {
+                    if (user.length < 6) {
+                        $("#loiUser").text("Tai khoan phai co it nhat 6 ky tu");
+                    }
+                    if (pass.length < 6) {
+                        $("#loiPass").text("Mat khau phai co it nhat 6 ky tu va 1 ky tu a-z");
+                    } else if (!pass.match(/[a-zA-Z]/)) {
+                        $("#loiPass").text("Mat khau phai co it nhat 1 chu cai");
+                    }
+                    if (pass != nhapLaiPass) {
+                        $("#loiPass1").text("Mat nhau khong chung khop");
+                    }
+                    if (!email.match(/^[a-zA-Z0-9]*\@[a-zA-Z]{1,10}\.[a-zA-Z]{1,10}$/)) {
+                        $("#loiEmail").text("Email khong hop le");
+                    }
+                    if (!SDT.match(/^[0-9]{9,12}$/)) {
+                        $("#loiSdt").text("Nhap tu 9 - 12 so");
+                    }
+                }
+
             });
+
+        });
 
                 // function thongbao() {
                 //     var user        = document.getElementById("username");
@@ -68,31 +85,35 @@
                 //         document.getElementById("baoloi").innerHTML = "Không được để trống thông tin";
                 //     }
                 // } 
-        </script> 
-    </head>
-    <body>
-        <div id="formDangKy">
-            <div class="title"> <h3 >Đăng ký tài khoản </h3> </div>
-            <h4>Tên</h4>
-            <input type="text" class="nhap" id= "username" value="" ></br>
-            <span id="loiUser"></span>
-            <h4>Email</h4>
-            <input type="email" class="nhap" id= "Email" value="" ></br>
-            <span id="loiEmail"></span>
-            <h4>Mật khẩu</h4>
-            <input type="password" class="nhap"  id= "password" value=""></br>
-            <span id="loiPass"></span>
-            <h4>Xác nhận mật khẩu</h4>
-            <input type="password" class="nhap"  id= "nhapLaiPassword" value=""></br>
-            <span id="loiPass1"></span>
-            <h4>Số điện thoại</h4>
-            <input type="text" class="nhap" id="SDT" value=""></br>
-            <span id="loiSdt"></span>
-            <h4>Nhập địa chỉ</h4>
-            <input type="text" class="nhap" id= "diaChi" value=""></br>
-            <span id="loiDiachi"></span>
-            <p id= "baoloi"></p>
-            <input type="button" id="taoTaiKhoan" value="Tao Tai Khoan" >
+    </script>
+</head>
+
+<body>
+    <div id="formDangKy">
+        <div class="title">
+            <h3>Đăng ký tài khoản </h3>
         </div>
-    </body>
+        <h4>Tên</h4>
+        <input type="text" class="nhap" id="username" value=""></br>
+        <span id="loiUser"></span>
+        <h4>Email</h4>
+        <input type="email" class="nhap" id="Email" value=""></br>
+        <span id="loiEmail"></span>
+        <h4>Mật khẩu</h4>
+        <input type="password" class="nhap" id="password" value=""></br>
+        <span id="loiPass"></span>
+        <h4>Xác nhận mật khẩu</h4>
+        <input type="password" class="nhap" id="nhapLaiPassword" value=""></br>
+        <span id="loiPass1"></span>
+        <h4>Số điện thoại</h4>
+        <input type="text" class="nhap" id="SDT" value=""></br>
+        <span id="loiSdt"></span>
+        <h4>Nhập địa chỉ</h4>
+        <input type="text" class="nhap" id="diaChi" value=""></br>
+        <span id="loiDiachi"></span>
+        <p id="baoloi"></p>
+        <input type="button" id="taoTaiKhoan" value="Tao Tai Khoan">
+    </div>
+</body>
+
 </html>
