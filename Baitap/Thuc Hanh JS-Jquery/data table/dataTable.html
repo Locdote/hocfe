@@ -1,85 +1,125 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
- 
-        <script>
-            $(document).ready(function () {
-                // $('#table_id').DataTable();
-                $("#search").on("keyup", function(){
-                    var tukhoa= $(this).val.toLowerCase();
-                    $("#table_id").each(function(){
-                        $(this).toggle($(this).text().toLowerCase().indexOf(tukhoa) > -1);
-                    });
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var danhSachHocSinh = [{"id":"617bf97e0c01b7cd3e647205","age":20,"eyeColor":"brown","name":"Meagan Orr","gender":"female"},{"id":"617bf97ef8acadbc6fcfc38e","age":32,"eyeColor":"blue","name":"Bobbie Castaneda","gender":"female"},{"id":"617bf97eca7d141c4f00346f","age":40,"eyeColor":"green","name":"Rowe Gonzalez","gender":"male"},{"id":"617bf97e8aa6cc03713469fa","age":30,"eyeColor":"blue","name":"Estes Miranda","gender":"male"},{"id":"617bf97e709bbb94f38a71ac","age":27,"eyeColor":"brown","name":"Addie Bond","gender":"female"},{"id":"617bf97e75ebb3ee93a9ca63","age":27,"eyeColor":"blue","name":"Latonya Berg","gender":"female"},{"id":"617bf97e22df689560d68258","age":34,"eyeColor":"blue","name":"Guerra Donovan","gender":"male"},{"id":"617bf97ed0730453192aadde","age":25,"eyeColor":"brown","name":"Lewis Black","gender":"male"},{"id":"617bf97e418f2cbc30802eb1","age":29,"eyeColor":"brown","name":"Cooper Robinson","gender":"male"},{"id":"617bf97ea005ec09b1dd8488","age":40,"eyeColor":"brown","name":"Keisha Carter","gender":"female"},{"id":"617bf97e143fbd033308001a","age":29,"eyeColor":"blue","name":"Moore Perkins","gender":"male"},{"id":"617bf97e825e3f8355ece50a","age":22,"eyeColor":"brown","name":"Chrystal Hale","gender":"female"},{"id":"617bf97e58717838acb6d076","age":29,"eyeColor":"brown","name":"Lottie Charles","gender":"female"},{"id":"617bf97e6bce8bc05a5bc9fb","age":22,"eyeColor":"brown","name":"Jenkins Quinn","gender":"male"},{"id":"617bf97e32044f873fa04951","age":32,"eyeColor":"green","name":"Dana Sanford","gender":"female"},{"id":"617bf97e7c171e4df1f58c79","age":33,"eyeColor":"brown","name":"Corinne Gomez","gender":"female"},{"id":"617bf97e8a5bbaa1d7a2a70a","age":28,"eyeColor":"blue","name":"Fanny Petty","gender":"female"},{"id":"617bf97e7aa8a65d2ce07ce0","age":30,"eyeColor":"brown","name":"Jodie Cote","gender":"female"},{"id":"617bf97e7b5caca2f051ac2e","age":28,"eyeColor":"brown","name":"Aurora Berger","gender":"female"},{"id":"617bf97e65130416e3fad32e","age":31,"eyeColor":"brown","name":"Blair Kemp","gender":"male"},{"id":"617bf97e0bb623acac2368f7","age":34,"eyeColor":"brown","name":"Lessie Harvey","gender":"female"},{"id":"617bf97ecc7c1aa87f6d560b","age":36,"eyeColor":"brown","name":"Krista Ray","gender":"female"},{"id":"617bf97e2ced990ebe457c1b","age":26,"eyeColor":"blue","name":"Katharine Sosa","gender":"female"},{"id":"617bf97e02212bde434fed8d","age":28,"eyeColor":"blue","name":"Glenna Fernandez","gender":"female"},{"id":"617bf97edb713004da493287","age":25,"eyeColor":"blue","name":"Courtney Perez","gender":"female"},{"id":"617bf97e10b4389998d8acf9","age":27,"eyeColor":"blue","name":"Trisha Blackwell","gender":"female"}];
+            var trangHienTai = 1; //a
+            var soBanGhiMotTrang = 5; //b
+            var tuKhoaTimKiem = "";
+            var danhSachCanPhan = danhSachHocSinh;
+            $("#show").val(soBanGhiMotTrang);
+            // batdau = b*a -b
+            // ketthuc= b*a - 1
+
+            phanTrang(danhSachCanPhan);
+
+            function phanTrang(danhSach) {
+                $("#table_body").empty();
+                if (danhSach.length > 5 && soBanGhiMotTrang > 0) {
+                    // Hien thi so ban ghi 1 trang
+                    var batDau = +soBanGhiMotTrang * +trangHienTai - +soBanGhiMotTrang;
+                    var ketThuc = +soBanGhiMotTrang * +trangHienTai - 1;
+                    for(var i = batDau; i <= ketThuc; i++) {
+                        $("#table_body").append("<tr>");
+                        $("#table_body").append("<td>" + danhSach[i].id + "</td>");
+                        $("#table_body").append("<td>" + danhSach[i].age + "</td>");
+                        $("#table_body").append("<td>" + danhSach[i].eyeColor + "</td>");
+                        $("#table_body").append("<td>" + danhSach[i].name + "</td>");
+                        $("#table_body").append("<td>" + danhSach[i].gender + "</td>");
+                        $("#table_body").append("</tr>");
+                    }
+
+                    // Xu ly nut chuyen trang
+                    var congThem = 0;
+                    if (danhSach.length % +soBanGhiMotTrang != 0) {
+                        congThem = 1;
+                    }
+                    var tongSoTrang = danhSach.length / +soBanGhiMotTrang + +congThem;
+                    $("#dayTrang").empty();
+                    for(var i = 1; i <= tongSoTrang ; i++) {
+                        $("#dayTrang").append("<span>" + i + "</span>");
+                        chuyenTrang(danhSach);
+                    }
+                    $("#dayTrang").show();
+                } else {
+                    $("#dayTrang").hide();
+                    for(var i = 0; i <= danhSach.length; i++) {
+                        $("#table_body").append("<tr>");
+                        $("#table_body").append("<td>" + danhSach[i].id + "</td>");
+                        $("#table_body").append("<td>" + danhSach[i].age + "</td>");
+                        $("#table_body").append("<td>" + danhSach[i].eyeColor + "</td>");
+                        $("#table_body").append("<td>" + danhSach[i].name + "</td>");
+                        $("#table_body").append("<td>" + danhSach[i].gender + "</td>");
+                        $("#table_body").append("</tr>");
+                    }
+                }
+            }
+
+            $("#show").on("change", function() {
+                soBanGhiMotTrang = +$(this).val();
+                phanTrang(danhSachCanPhan);
+            })
+
+            function chuyenTrang(danhSach) {
+                $("span").on("click", function(){
+                    trangHienTai = +$(this).text();
+                    phanTrang(danhSachCanPhan);
                 });
-            });
-        </script>
-    </head>
-    <body>
-        Show <input id="show" type="number" style="width: 40px;">
+            }
+
+            //Search
+            $("#search").on("keyup", function(){
+                tuKhoaTimKiem = $(this).val();
+                var danhSachSauLoc = $(danhSachHocSinh).filter(function(index){
+                    var regex = new RegExp(tuKhoaTimKiem);
+                    return regex.test(danhSachHocSinh[index].name);
+                })
+                danhSachCanPhan = danhSachSauLoc;
+                phanTrang(danhSachCanPhan);
+            })
+        });
+    </script>
+    <style>
+        .container {
+            width: 800px;
+            margin: auto;
+        }
+        span {
+            width: 150px;
+            border: solid 1px black;
+        }
+
+        span:hover {
+            background-color: coral;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        Show <input id="show" type="number" style="width: 40px;" min="0">
         Search <input id="search" type="text">
-        <table  border="soilid 1px" style="margin-top: 10px;">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
-                </tr>
-            </thead>
-            <tbody id="table_id">
-                <tr>
-                    <td class="Name">Lavie</td>
-                    <td>CEO</td>
-                    <td>Ha noi</td>
-                    <td>20</td>
-                    <td>16/05/2020</td>
-                    <td>$1.600.000</td>
-                </tr>
-                <tr>
-                    <td class="Name">Milo</td>
-                    <td>Doctor</td>
-                    <td>New York</td>
-                    <td>54</td>
-                    <td>17/05/2015</td>
-                    <td>$560.000</td>
-                </tr>
-                <tr>
-                    <td class="Name">Aqua</td>
-                    <td>Student</td>
-                    <td>Paris</td>
-                    <td>16</td>
-                    <td>17/05/2018</td>
-                    <td>$100.000</td>
-                </tr>
-                <tr>
-                    <td class="Name">Tiki</td>
-                    <td>System architect</td>
-                    <td>Tokyo</td>
-                    <td>35</td>
-                    <td>30/08/2005</td>
-                    <td>$430.000</td>
-                </tr>
-                <tr>
-                    <td class="Name">Logitech</td>
-                    <td>Developer</td>
-                    <td>New York</td>
-                    <td>28</td>
-                    <td>17/05/2015</td>
-                    <td>$560.000</td>
-                </tr>
-                <tr>
-                    <td class="Name">Fox</td>
-                    <td>Nha bao</td>
-                    <td>New York</td>
-                    <td>54</td>
-                    <td>17/05/2015</td>
-                    <td>$560.000</td>
-                </tr>
-                </tbody>
+        <table id="table_id" border="soilid 1px" style="margin-top: 10px;">
+            <tr>
+                <th>ID</th>
+                <th>AGE</th>
+                <th>EYE COLOR</th>
+                <th>NAME</th>
+                <th>GENDER</th>
+            </tr>
+            <tbody id="table_body">
+
+            </tbody>
         </table>
-    </body>
+        <div id="dayTrang">
+
+        </div>
+    </div>
+
+</body>
+
 </html>
