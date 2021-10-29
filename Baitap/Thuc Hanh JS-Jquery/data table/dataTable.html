@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+ 
+        <script>
+            $(document).ready(function () {
+                // $('#table_id').DataTable();
+                $("#search").on("keyup", function(){
+                    var tukhoa= $(this).val.toLowerCase();
+                    $("#table_id").each(function(){
+                        $(this).toggle($(this).text().toLowerCase().indexOf(tukhoa) > -1);
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        Show <input id="show" type="number" style="width: 40px;">
+        Search <input id="search" type="text">
+        <table  border="soilid 1px" style="margin-top: 10px;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody id="table_id">
+                <tr>
+                    <td class="Name">Lavie</td>
+                    <td>CEO</td>
+                    <td>Ha noi</td>
+                    <td>20</td>
+                    <td>16/05/2020</td>
+                    <td>$1.600.000</td>
+                </tr>
+                <tr>
+                    <td class="Name">Milo</td>
+                    <td>Doctor</td>
+                    <td>New York</td>
+                    <td>54</td>
+                    <td>17/05/2015</td>
+                    <td>$560.000</td>
+                </tr>
+                <tr>
+                    <td class="Name">Aqua</td>
+                    <td>Student</td>
+                    <td>Paris</td>
+                    <td>16</td>
+                    <td>17/05/2018</td>
+                    <td>$100.000</td>
+                </tr>
+                <tr>
+                    <td class="Name">Tiki</td>
+                    <td>System architect</td>
+                    <td>Tokyo</td>
+                    <td>35</td>
+                    <td>30/08/2005</td>
+                    <td>$430.000</td>
+                </tr>
+                <tr>
+                    <td class="Name">Logitech</td>
+                    <td>Developer</td>
+                    <td>New York</td>
+                    <td>28</td>
+                    <td>17/05/2015</td>
+                    <td>$560.000</td>
+                </tr>
+                <tr>
+                    <td class="Name">Fox</td>
+                    <td>Nha bao</td>
+                    <td>New York</td>
+                    <td>54</td>
+                    <td>17/05/2015</td>
+                    <td>$560.000</td>
+                </tr>
+                </tbody>
+        </table>
+    </body>
+</html>
