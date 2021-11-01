@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $.ajax({
+                        url: "https://jsonplaceholder.typicode.com/todos/1",
+                        type: "GET",
+                        dataType: "json",
+                        success: function(ketQua) {
+                            $("#container table").append("<tr>");
+                            $("#container table").append("<td>" + ketQua.userId + "</td>");
+                            $("#container table").append("<td>" + ketQua.id + "</td>");
+                            $("#container table").append("<td>" + ketQua.title + "</td>");
+                            $("#container table").append("<td>" + ketQua.completed + "</td>");
+                            $("#container table").append("/<tr>");
+                        },
+                        error: function(response) {
+                            alert("Khong the goi api");
+                        }
+                    })
+                });
+            });
+        </script>
+    </head>
+    
+    <body>
+        <button>Lay du lieu</button>
+        <div id="container">
+            <table border="1px">
+                <tr>
+                    <th>userId</th>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Completed</th>
+                </tr>
+            </table>
+        </div>
+    </body>
+
+</html>
