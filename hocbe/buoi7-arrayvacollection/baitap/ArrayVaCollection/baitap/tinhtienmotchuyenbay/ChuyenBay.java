@@ -105,15 +105,15 @@ public class ChuyenBay {
 	int veCaoCap = 10000;
 	int veThuongGia = 5000;
 	int veTrungCap = 2000;
-	int ketQua1 = 0;
-	int ketQua2 = 0;
 	public int tongTienChuyenBay() {
+		int ketQua1 = 0;
+		int ketQua2 = 0;
 		if (tuoi < 7 && Integer.parseInt(loaiVe) == veTrungCap) {
 			int soTienGiam1 = (veTrungCap * 20) / 100;
-			int ketQua1 = veTrungCap - soTienGiam1;
+			ketQua1 = veTrungCap - soTienGiam1;
 		} else if (thoiGianBay >= 20 || thoiGianBay <= 4) {
 			int soTienGiam2 = (tienVe * 50) / 100;
-			int ketQua2 = tienVe - soTienGiam2;
+			ketQua2 = tienVe - soTienGiam2;
 		}
 	
 		return ketQua1 + ketQua2;
