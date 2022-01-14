@@ -1,0 +1,11 @@
+Bai toan quan ly ban xe oto
+
+Xe oto gom co: ma xe, ten xe, gia xe, mau xe
+Khi chay len nguoi dung nhap 3 truong hop:
+1. Them xe moi
+2. Hien toan bo danh sach xe
+3. Hien 1 xe theo ma xe
+
+Neu nguoi dung chon 1: Bat nguoi dung nhap day du thong tin xe va them vao danh sach xe
+			   chon 2: Hien toan bo danh sach xe
+			   chon 3: Bat nguoi dung nhap ma xe -> in ra trong tin xe tuong ung
