@@ -8,9 +8,12 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class Run {
+	
+	public static final String DUONG_DAN_FILE = "D:\\loc\\hocfe\\hocbe\\buoi10-docghifile\\Baitap\\Bai1-TaoFileVaoSaoChepNoiDung\\Resource\\";
 
 	public static void main(String[] args) throws IOException {
-		File fileResource = new File("D:\\eclipse-workspace\\Bai1-TaoFileVaoSaoChepNoiDung\\Resource\\student.txt");
+		
+		File fileResource = new File(DUONG_DAN_FILE + "student.txt");
 
 		try {
 			fileResource.createNewFile();
@@ -18,7 +21,7 @@ public class Run {
 			e.printStackTrace();
 			System.out.println("Loi");
 		}
-		File fileClone = new File("D:\\eclipse-workspace\\Bai1-TaoFileVaoSaoChepNoiDung\\Resource\\student-clone.txt");
+		File fileClone = new File(DUONG_DAN_FILE + "student-clone.txt");
 		try {
 			fileClone.createNewFile();
 		} catch (IOException e) {
@@ -29,9 +32,9 @@ public class Run {
 
 		try {
 			inStream = new FileInputStream(
-					new File("D:\\eclipse-workspace\\Bai1-TaoFileVaoSaoChepNoiDung\\Resource\\student.txt"));
+					new File(DUONG_DAN_FILE + "student.txt"));
 			outStream = new FileOutputStream(
-					new File("D:\\eclipse-workspace\\Bai1-TaoFileVaoSaoChepNoiDung\\Resource\\student-clone.txt"));
+					new File(DUONG_DAN_FILE + "student-clone.txt"));
 
 			int length;
 			byte[] buffer = new byte[1024];
