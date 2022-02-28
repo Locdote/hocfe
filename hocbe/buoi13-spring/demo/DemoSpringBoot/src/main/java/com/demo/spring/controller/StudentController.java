@@ -53,4 +53,36 @@ public class StudentController {
 		model.addAttribute("danhSachHocSinh", danhSachHocSinh);
 		return "student.html";
 	}
+	
+	@RequestMapping(value="/goToEditStudent", method = RequestMethod.GET)
+	public String goToEditStudent(@RequestParam String studentId, Model mode) {
+		Student student = new Student("", "", "");
+		for(int i = 0; i < danhSachHocSinh.size(); i++) {
+			if (danhSachHocSinh.get(i).getId().equals(studentId))
+				student = danhSachHocSinh.get(i);
+		}
+		
+		mode.addAttribute("student", student);
+		return "editStudent.html";
+	}
+	
+	@RequestMapping(value="/editStudent", method = RequestMethod.POST)
+	public String editStudent(@ModelAttribute Student student, Model model) {
+
+		System.out.println("aaaaaaaa: " + student.getId());
+		System.out.println("aaaaaaaa: " + student.getName());
+		System.out.println("aaaaaaaa: " + student.getSchool());
+		
+		for(int i = 0; i < danhSachHocSinh.size(); i++) {
+			if (danhSachHocSinh.get(i).getId().equals(student.getId())) {
+				danhSachHocSinh.get(i).setName(student.getName());
+				danhSachHocSinh.get(i).setSchool(student.getSchool());
+			}
+		}
+		model.addAttribute("chaoMung", "Chao mung den voi trang web student");
+		model.addAttribute("message", "Sua thanh cong hoc sinh co ID: " + student.getId());
+		model.addAttribute("danhSachHocSinh", danhSachHocSinh);
+		
+		return "student.html";
+	}
 }

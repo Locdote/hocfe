@@ -24,7 +24,9 @@
       	</table>
       	<input type="submit" value="Them"></input>
       </form>
-     
+     <div>
+     	<p style="color: green;" th:text="${message}"></p>
+     </div>
       <table border="1px">
       	<tr>
       		<th>ID</th>
@@ -36,10 +38,14 @@
       		<td th:text="${hocSinh.getId()}"></td>
       		<td th:text="${hocSinh.getName()}"></td>
       		<td th:text="${hocSinh.getSchool()}"></td>
-      		<td>
+      		<td style="display: flex;">
       			<form action="/deleteStudent" method="get">
       				<input type="hidden" th:value="${hocSinh.getId()}" name="studentId">
       				<input type="submit" value="Xoa"/>
+      			</form>
+      			<form action="/goToEditStudent" method="get">
+      				<input type="hidden" th:value="${hocSinh.getId()}" name="studentId">
+      				<input type="submit" value="Sua"/>
       			</form>
       		</td>
       	</tr>

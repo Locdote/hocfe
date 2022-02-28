@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Edit student</title>
+   </head>
+   <body>
+      <h1 th:text="${chaoMung}"></h1>
+     
+      <form action="/editStudent" method="POST">
+      	<table>
+      		<tr>
+      			<td>ID</td>
+      			<td>
+      				<input type="text" th:value="${student.getId()}" disabled="disabled">
+					<input type="hidden" name="id" th:value="${student.getId()}">      			
+      			</td>
+      			
+      		</tr>
+      		<tr>
+      			<td>Name</td>
+      			<td><input type="text" name="name" th:value="${student.getName()}"></td>
+      		</tr>
+      		<tr>
+      			<td>Shool</td>
+      			<td><input type="text" name="school" th:value="${student.getSchool()}"></td>
+      		</tr>
+      	</table>
+      	<input type="submit" value="Sua"></input>
+      </form>
+</html>
