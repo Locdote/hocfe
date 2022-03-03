@@ -1,0 +1,59 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+	<h1 th:text="${wecome}"></h1>
+	<form action="/savePhone" method="post" >
+		<table style="border: 1px red solid">
+			<tr>
+				<td>ID</td>
+				<td><input type="text" name="id"></td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>Ram</td>
+				<td><input type="text" name="ram"></td>
+			</tr>
+			<tr>
+				<td>Color</td>
+				<td><input type="text" name="color"></td>
+			</tr>
+			<tr>
+				<td>Camera</td>
+				<td><input type="text" name="camera"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Them Dien Thoai"></td>
+			</tr>
+		</table>
+	</form>
+	<table style="border: 1px red solid">
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Ram</th>
+			<th>Color</th>
+			<th>Camera</th>
+			<th>Action</th>
+		</tr>
+		<tr th:each="dienThoai : ${danhSachDienThoai}">
+			<td th:text="${dienThoai.getId()}"></td>
+			<td th:text="${dienThoai.getName()}"></td>
+			<td th:text="${dienThoai.getRam()}"></td>
+			<td th:text="${dienThoai.getColor()}"></td>
+			<td th:text="${dienThoai.getCamera()}"></td>
+			<td>
+				<form action="/deletePhone" method="get">
+					<input type="hidden" th:value="${dienThoai.getId()}" name="phoneId">
+					<input type="submit" value="Xoa">
+				</form>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
