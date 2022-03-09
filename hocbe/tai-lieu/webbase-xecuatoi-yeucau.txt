@@ -1,0 +1,19 @@
+Yêu cầu:
+1. Tạo database có tên là xecuatoi
+Kết quả đạt được:
+- 1 file xecuatoi.sql: câu lệnh tạo database, use database, tạo các table cùng mối quan hệ (bảng nào cũng phải có primary key)
+- Lưu xecuatoi.sql vào git, thư mục database và up lên git server
+
+2. Tạo project nền
+Công nghệ: html, css, javascript, spring boot, spring boot web, thymleaf, jpa (thêm thư viện vào bên trong pom.xml)
+
+Kết quả:
+- Có 1 spring project chạy được trên eclipse
+- Project được kết nối đến database xecuatoi (application.properties)
+- Project có entity, repository, service và controller (y hệt được học)
+- Sau khi chạy, truy cập http://localhost:8080/xecuatoi -> hiện lên giao diện web có chữ "xe của tôi"
+
+Thử nghiệm đã tạo thành công:
+- Trong database tạo bảng thunghiem : id, name
+- Trong project tạo entity, repository, service và controller cho bảng thunghiem
+- Khi chạy project lên http://locahost:8080/thunghiem -> hiện danh sách bản ghi trong bảng thử nghiệm
