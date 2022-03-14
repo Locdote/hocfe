@@ -18,7 +18,7 @@
   
   <ul class="menu">
   	<li th:each="mn : ${menu}">
-  		<a th:href="${mn.url}" target="_blank" th:text="${mn.name}" th:if="${mn.idCha == 0}" ></a>
+  		<a th:href="${mn.url}" target="_blank" th:text="${mn.name}" th:if="${mn.idCha == 2}" ></a>
   		<ul>
   			<li  th:each="mn1 : ${menu}" th:if="${mn1.idCha == mn.id}">
   				<a target="_blank" th:href="${mn1.url}" th:text="${mn1.name}"></a>
